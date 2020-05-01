@@ -1,0 +1,27 @@
+﻿@using MVC_SkillWidgets.Models.Siniflar;
+@model List<Yetenek>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>YETENEK ADI</th>
+        <th>DEĞER</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+     <td>@item.ID</td>
+     <td>@item.YetenekAd</td>
+     <td>@item.Deger</td>
+     <td><a href="/Admin/YetenekSil/@item.ID" class="btn btn-danger">Sil</a></td>
+     <td><a href="/Admin/YetenekGetir/@item.ID" class="btn btn-success">Güncelle</a></td>
+    </tr>
+    }
+</table>
+
